@@ -17,11 +17,6 @@ import (
 )
 
 var (
-        "github.com/prometheus/client_golang/prometheus"
-        "github.com/prometheus/client_golang/prometheus/promhttp"
-)
-
-var (
         // How often our /hello request durations fall into one of the defined buckets.
         // We can use default buckets or set ones we are interested in.
         duration = prometheus.NewHistogram(prometheus.HistogramOpts{

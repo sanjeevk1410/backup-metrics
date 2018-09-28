@@ -17,8 +17,7 @@ import (
 )
 
 var (
-        // How often our /hello request durations fall into one of the defined buu
-ckets.
+        // How often our /hello request durations fall into one of the defined bucckets.
         // We can use default buckets or set ones we are interested in.
         )
 )

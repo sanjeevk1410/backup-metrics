@@ -17,28 +17,6 @@ import (
 )
 
 var (
-        // How often our /hello request durations fall into one of the defined buckets.
-        // We can use default buckets or set ones we are interested in.
-"main.go" 90L, 2202C
-package main
-
-import (
-        "flag"
-        "fmt"
-        "log"
-        "math/rand"
-        "net/http"
-        "os"
-        "os/signal"
-        "syscall"
-        "time"
-
-        "github.com/braintree/manners"
-        "github.com/prometheus/client_golang/prometheus"
-        "github.com/prometheus/client_golang/prometheus/promhttp"
-)
-
-var (
         // How often our /hello request durations fall into one of the defined buu
 ckets.
         // We can use default buckets or set ones we are interested in.

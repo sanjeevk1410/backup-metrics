@@ -17,8 +17,26 @@ import (
 )
 
 var (
-        // How often our /hello request durations fall into one of the defined bucckets.
+        "github.com/prometheus/client_golang/prometheus"
+        "github.com/prometheus/client_golang/prometheus/promhttp"
+)
+
+var (
+        // How often our /hello request durations fall into one of the defined buckets.
         // We can use default buckets or set ones we are interested in.
+        duration = prometheus.NewHistogram(prometheus.HistogramOpts{
+                Name:    "hello_request_duration_seconds",
+                Help:    "Histogram of the /hello request duration.",
+                Buckets: []float64{0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5, 10},
+        })
+        // Counter vector to which we can attach labels. That creates many key-value
+        // label combinations. So in our case we count requests by status code separetly.
+        counter = prometheus.NewCounterVec(
+                prometheus.CounterOpts{
+                        Name: "hello_requests_total",
+                        Help: "Total number of /hello requests.",
+                },
+                []string{"status"},
         )
 )
 
